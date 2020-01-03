@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sales Report</title>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/chart.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a href="#" class="navbar-brand">Sales Report</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5"
+            aria-controls="navbarSupportedContent-5" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-5">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" id="username" href="#">Username</a>
+                </li>
+                <li class="nav-item avatar dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-7.jpg"
+                            class="rounded-circle z-depth-0" alt="avatar image">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+                        aria-labelledby="navbarDropdownMenuLink-5">
+                        <a class="dropdown-item waves-effect waves-light" href="#">Account</a>
+                        <a class="dropdown-item waves-effect waves-light" href="#">Settings</a>
+                        <a class="dropdown-item waves-effect waves-light" href="#">Lougout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Navbar-->
+
+    <!--Main-->
+    <div id="container">
+
+        <div id="dropdowns">
+            Categoria:
+            <select id="categoria" name="categoria">
+                <option>Vestuário</option>
+                <option>Cama e Banho</option>
+            </select>
+
+            Produtos:
+            <select id="produtos" name="produtos">
+                <option>Calça</option>
+                <option>Boné</option>
+                <option>Bolsa</option>
+            </select>
+
+            Marca:
+            <select id="marca" name="marca">
+                <option>Calvin Clein</option>
+            </select>
+        </div> 
+
+
+        <canvas id="myChart" width="800" height="400">
+
+            <script>
+                var ctx = $('#myChart');
+
+                var chartGraph = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                        datasets: [{
+                            label: 'Vendas',
+                            data: [100, 500, 600, 100, 200],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(54, 162, 235, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(54, 162, 235, 1)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        },
+                        title: {
+						    display: true,
+                            text: 'Sales by mounth for:',
+                            fontSize: 18
+                        },
+                    }
+                });
+            </script>
+
+        </canvas>
+        <!--Main-->
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

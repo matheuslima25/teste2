@@ -1,0 +1,23 @@
+#container {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+.rounded-circle{
+    width: auto;
+    height: 50px;
+}
+
+#username{
+    padding-top: 20px;
+}
+
+#dropdowns {
+    margin: auto;
+    padding-left: 25%;
+}
+
+#myChart {
+    padding-top: 20px;
+}
